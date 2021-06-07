@@ -47,19 +47,14 @@ public class ProducerApplication implements CommandLineRunner {
 		Double sensor1BearingInformation = 0d;
 		Double sensor2BearingInformation = 0d;
 
-		// Create target randomly
 		int[] target = getRandomVect(-500, -500, 500, 500);
 
-		// Create Sensor-1 location randomly
 		int[] sensorVector1 = getRandomVect(-500, -500, 500, 500);
-		// Create Sensor-2 location randomly
 		int[] sensorVector2 = getRandomVect(-500, -500, 500, 500);
 
-		// Calculate bearing information
 		sensor1BearingInformation = bearing(sensorVector1[1], sensorVector1[0], target[1], target[0]);
 		sensor2BearingInformation = bearing(sensorVector2[1], sensorVector2[0], target[1], target[0]);
 
-		// Send sensor information
 		kafkaTemplate.send(TOPIC, new Sensor("1", sensorVector1[0], sensorVector1[1],sensor1BearingInformation.intValue(),"2", sensorVector2[0], sensorVector2[1],sensor2BearingInformation.intValue()));
 
 

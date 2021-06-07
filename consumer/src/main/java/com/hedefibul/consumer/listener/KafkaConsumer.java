@@ -64,8 +64,8 @@ public class KafkaConsumer {
 
         double[] calculatedPoints = calculateIntersectionPoints(eq1, eq2);
 
-        System.out.println("Target X: " + calculatedPoints[0]); //x
-        System.out.println("Target Y: " + calculatedPoints[1]); //y
+        System.out.println("Target X: " + calculatedPoints[0]);
+        System.out.println("Target Y: " + calculatedPoints[1]);
 
     }
 
